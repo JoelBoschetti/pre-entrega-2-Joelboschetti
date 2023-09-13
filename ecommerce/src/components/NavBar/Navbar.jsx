@@ -1,7 +1,8 @@
 import '../NavBar/NavBar.css';
 import Cartwidget from '../CartWidget/CartWidget';
-
+import logo from '../NavBar/assets/9z.jpg'
 import Swal from 'sweetalert2';
+import { Link } from 'react-router-dom';
 
 
 
@@ -26,17 +27,20 @@ export default function NavBar() {
     return (
     <>
         <nav className='navBar' >
-        
-          <p id='parrafo'>9z House      <Cartwidget />
-         
-   </p>
+        <Link to="/">
+          <p id='parrafo'> <img src={logo} alt="9z logo" width={50} height={50} /> 9z House      <Cartwidget /></p>
+          </Link>
+   
    <div >
       <ul className='ulsito'>
       <li>
-      <button onClick={MostrarAlerta} >jugadores</button></li>
+      <Link to="/Jugadores"> <button onClick={MostrarAlerta} >Jugadores</button> </Link>
+      </li>
       <li>
-      <button onClick={MostrarAlerta} >torneos</button></li>
-     <li> <button onClick={MostrarAlerta}>camisetas</button>
+      <Link to="/Torneos"><button onClick={MostrarAlerta} >Torneos</button></Link>
+      </li>
+     <li> 
+     <Link to="Camisetas">  <button onClick={MostrarAlerta}>Camisetas</button> </Link>
       </li>
       </ul>
     </div>

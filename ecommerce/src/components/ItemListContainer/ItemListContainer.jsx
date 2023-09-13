@@ -1,11 +1,24 @@
-import '../ItemListContainer/ItemListContainer.css'
+import products from "../data/asyncMock"
+import ItemList from './ItemList'
+import { useEffect, useState } from 'react'
 
+const mockAPI = () => {
+return new Promise((resolve, reject) => {
 
-const ItemListContainer = ({greeting}) => {
- return(
-    <div className="divsito">
-        <h1 >{greeting} </h1>
-    </div>
-)
+    setTimeout(()=> {
+    resolve(asynMock);
+
+    },2000);
+    });
 };
-export default ItemListContainer
+export default function ItemListContainer(){
+    const [products, setProducts] = useState([]);
+    useEffect(() => {
+        mockAPI().then((data) =>setProducts(data));
+    }, []);
+    return (
+        <div className='item-list-container'>
+            <ItemList products={products} />
+        </div>
+    )
+}
