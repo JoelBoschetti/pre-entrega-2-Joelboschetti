@@ -1,24 +1,32 @@
-import products from "../data/asyncMock"
-import ItemList from './ItemList'
 import { useEffect, useState } from 'react'
+import {  getProducts, getProductByCategory } from "../data/asyncMock"
+import ItemList from '../ItemListContainer/ItemList'
+import { useParams } from 'react-router-dom';
 
-const mockAPI = () => {
-return new Promise((resolve, reject) => {
 
-    setTimeout(()=> {
-    resolve(asynMock);
+const ItemListContainer = ({ greeting }) => {
+    const [products, setProducts] = useState([])
 
-    },2000);
-    });
-};
-export default function ItemListContainer(){
-    const [products, setProducts] = useState([]);
-    useEffect(() => {
-        mockAPI().then((data) =>setProducts(data));
-    }, []);
+    const {categoryId} = useParams()
+
+    useEffect(()=> {
+
+      const asyncFunc = categoryId ? getProductByCategory : getProducts
+    
+            asyncFunc(categoryId)
+            .then(response => {
+                setProducts(response)
+            })
+            .catch(error => {
+                console.error(error)
+            })
+    }, [categoryId]) 
     return (
-        <div className='item-list-container'>
-            <ItemList products={products} />
+        <div>
+            <h1> {greeting} </h1>
+            <ItemList products={products}/>
         </div>
     )
-}
+};
+
+export default ItemListContainer

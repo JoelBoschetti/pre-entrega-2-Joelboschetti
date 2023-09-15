@@ -1,0 +1,32 @@
+.CardItem{
+margin: 30px;
+margin-bottom: 200px;
+display: grid;
+width: 700px;
+}
+.CardItem:hover {
+    box-shadow: 0 8px 8px 0 rgba(0,0,0,0.5);
+    transition: 0.3s;
+}
+
+.ItemHeader{
+    border: 10px;
+    border-color: black;
+    padding: 2px 2px;
+}
+.Info{
+    padding: 2px 2px;
+ 
+    font-size: 20px;
+}
+
+picture {
+    display: flex;
+    align-items: center;
+    align-content: stretch;
+    flex-wrap: wrap;
+    flex-direction: column;}
+    
+    .ItemFooter{
+        flex-direction: none;
+    }

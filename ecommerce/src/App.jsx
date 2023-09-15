@@ -3,7 +3,7 @@ import Navbar from './components/NavBar/NavBar'
 import './App.css'
 import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
-
+import ItemDetailContainer from "./components/ItemListContainer/ItemDetailContainer"
 function App() {
   const [count, setCount] = useState(0)
 
@@ -12,10 +12,10 @@ function App() {
      <BrowserRouter >
      <Navbar />
      <Routes>
-     <Route exact path='/' element={<ItemListContainer/>}/>
-     <Route exact path='/category/:Jugadores' element={<ItemListContainer/>}></Route>
-     <Route exact path='/category/:Torneos' element={<ItemListContainer/>}></Route>
-     <Route exact path='/category/:Camisetas' element={<ItemListContainer/>}></Route>
+     <Route path='/' element={<ItemListContainer/>}/>
+     <Route path='/category/:categoryId' element={<ItemListContainer/>}/>
+     <Route path='/item/:itemId' element={<ItemDetailContainer/>}/>
+     <Route path='*' element={ <h1>404 NOT FOUND</h1>  }/>
      </Routes>
      </BrowserRouter>
      
