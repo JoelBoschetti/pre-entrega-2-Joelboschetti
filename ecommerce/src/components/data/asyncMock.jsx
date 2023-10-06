@@ -5,7 +5,7 @@ const products = [
         "price": 109.95,
         "category": "Otros",
         "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
-        "stock": "1"
+        "stock": "57"
     },
     {
         "id": 2,
@@ -13,7 +13,7 @@ const products = [
         "price": 22.3,
         "category": "Ropa",
         "image": "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg",
-        "stock": "1"
+        "stock": "41"
     },
     {
         "id": 3,
@@ -21,7 +21,7 @@ const products = [
         "price": 55.99,
         "category": "Ropa",
         "image": "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg",
-        "stock": "1"
+        "stock": "21"
         
     },
     {
@@ -30,7 +30,7 @@ const products = [
         "price": 15.99,
         "category": "Ropa",
         "image": "https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg",
-        "stock": "1"
+        "stock": "16"
     },
     {
         "id": 5,
@@ -38,7 +38,7 @@ const products = [
         "price": 695,
         "category": "Otros",
         "image": "https://fakestoreapi.com/img/71pWzhdJNwL._AC_UL640_QL65_ML3_.jpg",
-        "stock": "1"
+        "stock": "12"
         }
     
 ]
@@ -53,7 +53,8 @@ export const getProducts = () => {
 export  const getProductById = (productId) => {
 return new Promise((resolve)=> {
     setTimeout(()=>{
-        resolve(products.find(prod=>prod.id===productId))
+        resolve(products.find(prod=>prod.id==productId))
+
     }, 500)
 }
 )

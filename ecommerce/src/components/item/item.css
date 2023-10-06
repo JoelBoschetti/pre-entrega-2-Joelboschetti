@@ -5,7 +5,7 @@ display: grid;
 width: 700px;
 }
 .CardItem:hover {
-    box-shadow: 0 8px 8px 0 rgba(0,0,0,0.5);
+    box-shadow: 8px 8px 8px 0 rgba(0,0,0,0.5);
     transition: 0.3s;
 }
 
@@ -29,4 +29,8 @@ picture {
     
     .ItemFooter{
         flex-direction: none;
+    }
+    .ItemImg{
+width: 30%;
+height: 50%;
     }
